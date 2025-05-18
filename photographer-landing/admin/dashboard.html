@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фотограф | Админ-панель</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <div class="admin-logo">Админ-панель</div>
+            <nav class="admin-nav">
+                <ul>
+                    <li><a href="dashboard.html" class="active"><i class="fas fa-tachometer-alt"></i> Дашборд</a></li>
+                    <li><a href="gallery-manager.html"><i class="fas fa-images"></i> Управление галереей</a></li>
+                    <li><a href="bookings-view.html"><i class="fas fa-calendar-check"></i> Заявки на съемку</a></li>
+                    <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> Выйти</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>Дашборд</h1>
+                <div class="admin-user">
+                    <span>Администратор</span>
+                    <img src="https://i.pinimg.com/736x/70/2c/cb/702ccbc0ea67420151a42a767e3a2fa7.jpg" alt="Аватар">
+                </div>
+            </header>
+
+            <div class="admin-content">
+                <div class="stats-cards">
+                    <div class="stats-card">
+                        <div class="stats-icon"><i class="fas fa-images"></i></div>
+                        <div class="stats-info">
+                            <h3>Фотографии</h3>
+                            <p class="stats-number">124</p>
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-icon"><i class="fas fa-calendar-check"></i></div>
+                        <div class="stats-info">
+                            <h3>Новые заявки</h3>
+                            <p class="stats-number">8</p>
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-icon"><i class="fas fa-users"></i></div>
+                        <div class="stats-info">
+                            <h3>Посетители</h3>
+                            <p class="stats-number">542</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-bookings">
+                    <h2>Последние заявки</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Имя</th>
+                                <th>Телефон</th>
+                                <th>Дата съемки</th>
+                                <th>Тип съемки</th>
+                                <th>Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Иван Петров</td>
+                                <td>+7 (123) 456-78-90</td>
+                                <td>15.06.2023</td>
+                                <td>Свадебная</td>
+                                <td><a href="bookings-view.html" class="btn-small">Просмотр</a></td>
+                            </tr>
+                            <tr>
+                                <td>Елена Смирнова</td>
+                                <td>+7 (987) 654-32-10</td>
+                                <td>18.06.2023</td>
+                                <td>Портретная</td>
+                                <td><a href="bookings-view.html" class="btn-small">Просмотр</a></td>
+                            </tr>
+                            <tr>
+                                <td>Алексей Иванов</td>
+                                <td>+7 (555) 123-45-67</td>
+                                <td>20.06.2023</td>
+                                <td>Семейная</td>
+                                <td><a href="bookings-view.html" class="btn-small">Просмотр</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>

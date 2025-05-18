@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фотограф | Управление галереей</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <div class="admin-logo">Админ-панель</div>
+            <nav class="admin-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Дашборд</a></li>
+                    <li><a href="gallery-manager.html" class="active"><i class="fas fa-images"></i> Управление галереей</a></li>
+                    <li><a href="bookings-view.html"><i class="fas fa-calendar-check"></i> Заявки на съемку</a></li>
+                    <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> Выйти</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>Управление галереей</h1>
+                <div class="admin-user">
+                    <span>Администратор</span>
+                    <img src="https://i.pinimg.com/736x/70/2c/cb/702ccbc0ea67420151a42a767e3a2fa7.jpg" alt="Аватар">
+                </div>
+            </header>
+
+            <div class="admin-content">
+                <div class="gallery-controls">
+                    <button class="btn" id="addPhotoBtn"><i class="fas fa-plus"></i> Добавить фото</button>
+                    <div class="gallery-filter">
+                        <select id="categoryFilter">
+                            <option value="all">Все категории</option>
+                            <option value="portrait">Портреты</option>
+                            <option value="wedding">Свадьбы</option>
+                            <option value="family">Семейные</option>
+                            <option value="nature">Природа</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="gallery-manager">
+                    <div class="photo-item">
+                        <img src="../images/portfolio1.jpg" alt="Фото 1">
+                        <div class="photo-actions">
+                            <select class="photo-category" data-id="1">
+                                <option value="portrait">Портрет</option>
+                                <option value="wedding">Свадьба</option>
+                                <option value="family">Семейная</option>
+                                <option value="nature">Природа</option>
+                            </select>
+                            <button class="btn-small btn-delete" data-id="1"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="../images/portfolio2.jpg" alt="Фото 2">
+                        <div class="photo-actions">
+                            <select class="photo-category" data-id="2">
+                                <option value="portrait">Портрет</option>
+                                <option value="wedding" selected>Свадьба</option>
+                                <option value="family">Семейная</option>
+                                <option value="nature">Природа</option>
+                            </select>
+                            <button class="btn-small btn-delete" data-id="2"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="../images/portfolio3.jpg" alt="Фото 3">
+                        <div class="photo-actions">
+                            <select class="photo-category" data-id="3">
+                                <option value="portrait">Портрет</option>
+                                <option value="wedding">Свадьба</option>
+                                <option value="family" selected>Семейная</option>
+                                <option value="nature">Природа</option>
+                            </select>
+                            <button class="btn-small btn-delete" data-id="3"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upload-modal" id="uploadModal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h2>Добавить новое фото</h2>
+                        <form id="uploadForm" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="photoFile">Выберите файл</label>
+                                <input type="file" id="photoFile" name="photo" accept="image/*" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="photoCategory">Категория</label>
+                                <select id="photoCategory" name="category" required>
+                                    <option value="portrait">Портрет</option>
+                                    <option value="wedding">Свадьба</option>
+                                    <option value="family">Семейная</option>
+                                    <option value="nature">Природа</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="photoDescription">Описание (необязательно)</label>
+                                <textarea id="photoDescription" name="description" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn">Загрузить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/gallery.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

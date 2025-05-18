@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фотограф | Портфолио</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Фотограф</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="portfolio.html" class="active">Портфолио</a></li>
+                    <li><a href="about.html">Обо мне</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li><a href="booking.html">Запись</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="portfolio">
+        <div class="container">
+            <h2>Мои работы</h2>
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">Все работы</button>
+                <button class="filter-btn" data-filter="portrait">Портреты</button>
+                <button class="filter-btn" data-filter="wedding">Свадьбы</button>
+                <button class="filter-btn" data-filter="family">Семейные</button>
+                <button class="filter-btn" data-filter="nature">Природа</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="portrait">
+                    <img src="images/portrait1.jpg" alt="Портрет 1">
+                    <div class="overlay">
+                        <h3>Портретная съемка</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="wedding">
+                    <img src="images/wedding1.jpg" alt="Свадьба 1">
+                    <div class="overlay">
+                        <h3>Свадебная съемка</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="family">
+                    <img src="images/family1.jpg" alt="Семья 1">
+                    <div class="overlay">
+                        <h3>Семейная съемка</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="nature">
+                    <img src="images/nature1.jpg" alt="Природа 1">
+                    <div class="overlay">
+                        <h3>Природа</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="portrait">
+                    <img src="images/portrait2.jpg" alt="Портрет 2">
+                    <div class="overlay">
+                        <h3>Портретная съемка</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="wedding">
+                    <img src="images/wedding2.jpg" alt="Свадьба 2">
+                    <div class="overlay">
+                        <h3>Свадебная съемка</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="family">
+                    <img src="images/family2.jpg" alt="Семья 2">
+                    <div class="overlay">
+                        <h3>Семейная съемка</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="nature">
+                    <img src="images/nature2.jpg" alt="Природа 2">
+                    <div class="overlay">
+                        <h3>Природа</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Профессиональный фотограф. Все права защищены.</p>
+            <div class="social">
+                <a href="#"><img src="icons/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="icons/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="icons/vk.png" alt="VK"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

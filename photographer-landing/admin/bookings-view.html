@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фотограф | Заявки на съемку</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="admin-sidebar">
+            <div class="admin-logo">Админ-панель</div>
+            <nav class="admin-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Дашборд</a></li>
+                    <li><a href="gallery-manager.html"><i class="fas fa-images"></i> Управление галереей</a></li>
+                    <li><a href="bookings-view.html" class="active"><i class="fas fa-calendar-check"></i> Заявки на съемку</a></li>
+                    <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> Выйти</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>Заявки на съемку</h1>
+                <div class="admin-user">
+                    <span>Администратор</span>
+                    <img src="https://i.pinimg.com/736x/70/2c/cb/702ccbc0ea67420151a42a767e3a2fa7.jpg" alt="Аватар">
+                </div>
+            </header>
+
+            <div class="admin-content">
+                <div class="bookings-filter">
+                    <select id="statusFilter">
+                        <option value="all">Все заявки</option>
+                        <option value="new">Новые</option>
+                        <option value="confirmed">Подтвержденные</option>
+                        <option value="completed">Завершенные</option>
+                        <option value="cancelled">Отмененные</option>
+                    </select>
+                    <input type="date" id="dateFilter" placeholder="Фильтр по дате">
+                </div>
+
+                <div class="bookings-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Имя</th>
+                                <th>Телефон</th>
+                                <th>Email</th>
+                                <th>Дата съемки</th>
+                                <th>Тип</th>
+                                <th>Статус</th>
+                                <th>Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Иван Петров</td>
+                                <td>+7 (123) 456-78-90</td>
+                                <td>ivan@example.com</td>
+                                <td>15.06.2023</td>
+                                <td>Свадебная</td>
+                                <td><span class="status-new">Новая</span></td>
+                                <td>
+                                    <button class="btn-small btn-view" data-id="1"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-small btn-confirm" data-id="1"><i class="fas fa-check"></i></button>
+                                    <button class="btn-small btn-cancel" data-id="1"><i class="fas fa-times"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Елена Смирнова</td>
+                                <td>+7 (987) 654-32-10</td>
+                                <td>elena@example.com</td>
+                                <td>18.06.2023</td>
+                                <td>Портретная</td>
+                                <td><span class="status-confirmed">Подтверждена</span></td>
+                                <td>
+                                    <button class="btn-small btn-view" data-id="2"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-small btn-complete" data-id="2"><i class="fas fa-check-double"></i></button>
+                                    <button class="btn-small btn-cancel" data-id="2"><i class="fas fa-times"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="booking-details-modal" id="bookingDetailsModal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h2>Детали заявки #<span id="bookingId"></span></h2>
+                        <div class="booking-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Имя:</span>
+                                <span class="detail-value" id="detailName"></span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Телефон:</span>
+                                <span class="detail-value" id="detailPhone"></span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Email:</span>
+                                <span class="detail-value" id="detailEmail"></span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Дата съемки:</span>
+                                <span class="detail-value" id="detailDate"></span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Тип съемки:</span>
+                                <span class="detail-value" id="detailType"></span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Статус:</span>
+                                <span class="detail-value" id="detailStatus"></span>
+                            </div>
+                            <div class="detail-row full-width">
+                                <span class="detail-label">Дополнительная информация:</span>
+                                <p class="detail-value" id="detailMessage"></p>
+                            </div>
+                        </div>
+                        <div class="booking-actions">
+                            <button class="btn" id="confirmBookingBtn">Подтвердить</button>
+                            <button class="btn" id="completeBookingBtn">Завершить</button>
+                            <button class="btn btn-cancel" id="cancelBookingBtn">Отменить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>
